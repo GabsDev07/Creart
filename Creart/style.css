@@ -1,0 +1,617 @@
+
+
+/*:::::header*/
+
+.contenedor-menu{
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: white;
+}
+
+.subcontenedor-menu {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center;
+    font-family: 'Oswald', sans-serif;
+    border-bottom: 1px black solid;
+}
+.img {
+    padding-left: 30px;
+    padding-top: 20px;
+    max-width: none;
+    max-height: none;
+    width: 80px;
+    cursor: pointer;
+}
+
+
+.nav-menu {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between; /* Distribuye los elementos a lo ancho */
+}
+
+.nav-menu li {
+    text-align: center;
+    flex: 1; /* Distribuye el espacio de manera uniforme entre los elementos */
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.nav-menu li a:hover {
+    color: #C4DFDF; /* Color de texto al pasar el cursor */
+    cursor: pointer;
+    transition: color 0.5s ease;
+}
+
+.nav-menu ul li a {
+    text-decoration: none; /* Quita el subrayado de los enlaces del menú */
+    color: black;
+}
+
+.menu {
+    z-index: 1; /*Para estar por encima de todo*/
+
+    display: grid;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0;
+    width: 100%;
+    height: 5%;
+    left: 0%;
+    top: 0%; 
+    margin: 0%; 
+    background-color: white; 
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    font-family: 'Oswald', sans-serif;
+    
+
+    grid-template-columns: 0.2fr 0.3fr 3.7fr 2.2fr 0.5fr;
+    grid-template-areas: 
+    'void1 logo search login void3'
+    ;
+}
+
+.espacio-header {
+    min-height: 140px;
+}
+
+.lupa {
+    cursor: pointer;
+    min-width: 9px;
+    width: 3%;
+    position: relative;
+    left: -5%;
+}
+
+.box-result {
+    border: 1px gray;
+    align-items: center;
+    display: grid;
+    gap: 10px;
+    padding: 10px;
+    grid-template-columns: 152px 1fr;
+    grid-template-areas: "img data";
+}
+.title-result {
+    font-style: italic;
+}
+.author-result {
+    color: gray;
+}
+.img-result {
+    max-width: 200px;
+}
+
+a {
+    padding: 2%;
+    font-size: 90%;
+    /*font-family: Verdana, Geneva, Tahoma, sans-serif;*/
+}
+.link {
+    transition: color 0.5s ease;
+}
+.link:hover {
+    cursor: pointer;
+    color: #C4DFDF;
+}
+.link:active {
+    background-color: white;
+}
+
+.login {
+    font-size: 80%;
+    transition: background-color 0.5s ease;
+    color: white;
+    background-color: black;
+    border-radius: 15px;
+    padding: 2% 9% 2% 9%;
+    width: 45%;
+}
+.login:hover {
+    cursor: pointer;
+    background-color: #C4DFDF;
+}
+.registrar {
+    font-size: 80%;
+    transition: background-color 0.5s ease;
+    color: black;
+    background-color: white;
+    border: 1px black solid;
+    border-radius: 15px;
+    padding: 2% 8% 2% 8%;
+    width: 45%;
+}
+.registrar:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #C4DFDF;
+    border-color: #C4DFDF;
+}
+
+@media (max-width: 600px) {
+    .menu {
+        min-height: 82px;
+        grid-template-columns: 0.2fr 0.3fr 3.7fr 0.2fr;
+        grid-template-rows: 40px 25px;
+        grid-template-areas: 
+        'void1 logo search void2'
+        'void1 login login void2'
+        ;
+    }
+    .espacio-header {
+        min-height: 130px;
+    }
+}
+
+/*FORMULARIO*/
+.conteiner-formulario{
+    text-align: center;
+    padding: 5%;
+    font-family: 'Oswald', sans-serif;
+    font-size: small;
+}
+form{
+    margin-top: 150px;
+}
+.conteiner-formulario form input{
+    border-style: none;
+    background-color: #f3f3f3;
+    font-family: 'Oswald', sans-serif;
+    font-size: small;
+}
+.conteiner-formulario form select{
+    border-style: none;
+    background-color: #f3f3f3;
+    font-family: 'Oswald', sans-serif;
+    font-size: small;
+}
+#boton-form{
+    border-style: none;
+    padding: 0.5%;
+    border-radius: 10px;
+    font-family: 'Oswald', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+#boton-form:hover {
+    background-color: #C4DFDF;
+}
+
+/*CARROUSEL*/
+main {
+    height: 100vh; /*100% del alto de pantalla del dispositivo en el que se muestra*/
+    display: flex; /*ayuda a colocar las cajas como si fueran celdas de tablas, con un comportamiento predecible y adaptable*/
+    align-items: center; /*controla la alineación de todos los elementos en el eje transversal (en altura)*/
+    justify-content: center; /*define cómo el navegador distribuye el espacio entre y alrededor de los items flex, a lo largo del eje principal de su contenedor*/
+    background-color: #C4DFDF;
+    background: linear-gradient(to top, #F8F6F4, #C4DFDF);
+    padding: 20px;
+    font-family: 'Oswald', sans-serif;
+}
+h2{
+    font-size: 1.5rem;
+}
+p{
+    font-size: 0.9rem;
+}
+
+.texto{
+    flex: 1;
+    margin-left: 10px;
+    background-color: #F8F6F4;
+    padding: 3.5%;
+    width: 20%;
+    word-break:break-all;
+    flex-wrap: nowrap;
+}
+
+.conteiner-carrousel{
+    position: relative; /*para que los elementos hijos se ubiquen en posiciones relativas a este contenedor padre*/
+    max-width: 1280px;
+    width: 100%;
+    height: 550px;
+    background-color: #F8F6F4;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.66);
+    border-radius: 15px;
+    margin-top: 100px;
+    overflow: hidden; /*para mostrar solo el primer elemento, hacemos que todo el contenido que sobresale de su contenedor se oculte */
+}
+
+.carrouseles{
+    width: 700%; /*para que entren las 7 imagenes en un conteiner padre*/
+    height: 100%;
+    display: flex; /*para que las imagenes esten alineadas en horizontal*/
+}
+
+.slider-section{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.slider-section img{
+    width: 80%;
+    height: auto; /*estira o compacta la imagen para usar el 100% del tamaño del conteiner*/
+    object-fit: cover; /*para que no se deformen las imagenes*/
+    border-radius: 15px 0 0 15px;
+}
+
+.btn-left,
+.btn-right {
+    display: flex; /*ayuda a colocar las cajas como si fueran celdas de tablas, con un comportamiento predecible y adaptable*/
+    position: absolute;
+    top: 50%; /*para centrar los botones en vertical*/
+    font-size: 1.5rem; /*unidad relacionada con la fuente tipográfica base de tu web*/
+    background-color: transparent;
+    border-radius: 50%;
+    padding: 5px;
+    font-weight: 900; /* Los valores de peso de fuente en CSS van desde 100 (el más ligero) hasta 900 (el más pesado o negrita)*/
+    cursor: pointer; /*cambia el cursor del mouse a una mano, indicando que el elemento es interactivo y puede hacer clic en el*/
+    color: #ffffff9a;
+    transform: translate(0,-50%); /*recoloca un elemento en el eje horizontal y/o vertical, en este caso sera trasladar el elemento 0 unidades horizontalmente y 50% verticalmente*/
+    transition: .5s ease; /*Define un efecto de transición con un comienzo lento, luego rápido y finalmente termina lento*/
+    user-select: none; /*se deshabilita la selección de texto dentro del elemento y sus descendientes*/
+}
+.btn-left{
+    left: 10px;
+    color: #5a5454;
+    border: 2px solid #ffffff9a;
+}
+.btn-right{
+    right: 10px;
+    color: #5a5454;
+    border: 2px solid #504a4a3d;
+}
+.btn-right:hover, /*animacion de sombreado en los botones genera este 'hover'*/
+.btn-left:hover{
+    background-color: #E3F4F4;
+    color: #C4DFDF;
+    border: none;
+}
+
+/* Media queries para tablet (por ejemplo, 768px de ancho) */
+@media screen and (max-width: 768px) {
+    .texto {
+        width: 60%; /* Ajusta el ancho del texto para tablet */
+        font-size: 1rem; /* Reduce el tamaño del texto para tablet */
+    }
+    .btn-left{
+        left: 1px;
+        color: #5a5454;
+        }
+    .btn-right{
+        right: 1px;
+        color: #5a5454;
+    }
+    .btn-right:hover, /*animacion de sombreado en los botones genera este 'hover'*/
+    .btn-left:hover{
+        background-color: #E3F4F4;
+        color: #C4DFDF
+    }
+    .slider-section{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+/* Media queries para smartphone (por ejemplo, 480px de ancho) */
+/* Media queries para smartphones (por ejemplo, 480px de ancho) */
+@media screen and (max-width: 480px) {
+    .texto {
+        width: 80%;
+        font-size: 0.9rem;
+    }
+
+    .conteiner-carrousel {
+        border-radius: 0; /* Puedes ajustarlo si es necesario */
+    }
+
+    .btn-left {
+        left: 1px;
+        color: #5a5454;
+    }
+
+    .btn-right {
+        right: 1px;
+        color: #5a5454;
+    }
+
+    .btn-right:hover,
+    .btn-left:hover {
+        background-color: #E3F4F4;
+        color: #C4DFDF;
+    }
+
+    .slider-section {
+        flex-direction: column; /* Apilar elementos verticalmente */
+        height: auto; /* Eliminar la altura para permitir que el contenido determine la altura */
+    }
+
+    .slider-section img {
+        width: 100%; /* Hacer la imagen de ancho completo */
+        height: auto; /* Permitir que la imagen se ajuste proporcionalmente */
+        border-radius: 0; /* Ajustar si es necesario */
+    }
+}
+
+
+
+/*GRID*/
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: transparent;
+    font-family: 'Oswald', sans-serif;
+}
+
+.section {
+    padding: 0; 
+    margin: 0; 
+    box-sizing: border-box;
+
+    margin-bottom: 20px;
+    background-color: transparent;
+    font-family: 'Oswald', sans-serif;
+}
+
+.grid {
+    padding: 0; 
+    margin: 0; 
+    box-sizing: border-box;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    box-sizing: border-box;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #ccc;
+    gap: 1px;
+    padding: 10px;
+    text-align: center;
+    display: grid;
+    /*grid-template-rows: auto 1fr auto;*/
+    max-width: 18rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.card img {
+    padding: 0; 
+    margin: 0; 
+    box-sizing: border-box;
+
+    grid-row: 2;
+    max-width: 100%; /* La imagen se ajustará automáticamente al ancho de la tarjeta */
+    max-height: auto;
+    height: auto; /* Mantiene la relación de aspecto original */
+}
+
+.obra_random {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+
+/* API CSS */
+
+#load-artwork-button {
+    display: block; /* Hace que el botón sea un bloque para que esté debajo de la imagen */
+    margin: 0 auto; /* Centra el botón horizontalmente */
+}
+
+
+/*:::::Pie de Pagina*/
+
+
+.pie-pagina{
+    width: 100%;
+    background-color: #c5efefe3;
+    font-family: 'Oswald', sans-serif;
+}
+.pie-pagina .grupo-1{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:50px;
+    padding: 45px 0px;
+}
+.loguito{
+    width: 45px;
+    height: auto;
+}
+.pie-pagina .grupo-1 .box figure{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pie-pagina .grupo-1 .box figure img{
+    width: 250px;
+}
+.pie-pagina .grupo-1 .box h2{
+    color: #787878;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+.pie-pagina .grupo-1 .box p{
+    color: #8a8a8a;
+    margin-bottom: 10px;
+}
+.pie-pagina .grupo-1 .red-social a{
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    margin-right: 20px;
+    background-color: #cce0df;
+    text-align: center;
+    vertical-align: middle;
+    transition: all 300ms ease;
+}
+.pie-pagina .grupo-1 .red-social a:hover{
+    color: #171717;
+}
+.pie-pagina .grupo-2{
+    background-color: #ffffff;
+    padding: 15px 10px;
+    text-align: center;
+    color: #fff;
+}
+.pie-pagina .grupo-2 small{
+    font-size: 15px;
+}
+@media screen and (max-width:800px){
+    .pie-pagina .grupo-1{
+        width: 85%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap:30px;
+        padding: 35px 0px;
+    }
+}
+
+/* CSS venta */
+.section-venta .grid{
+    place-items: center;
+    margin-top: 150px;
+    margin-bottom: 20px;
+    background-color: transparent;
+    font-family: 'Oswald', sans-serif;
+}
+
+/* CSS recomendados */
+.container-recom .section .grid{
+    place-items: center;
+    margin-top: 150px;
+    margin-bottom: 20px;
+    background-color: transparent;
+    font-family: 'Oswald', sans-serif;
+}
+/* CSS I FRAME */
+.frame{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Oswald', sans-serif;
+    padding: 5%;
+}
+
+/* Formularios
+
+/* Estilos generales para los formularios */
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos para etiquetas y campos de entrada */
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  /* Estilos para el botón */
+  button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Añade márgenes adicionales entre formularios */
+  form + form {
+    margin-top: 20px;
+  }
+  
+  /* Estilos para el div "OPERACIONES DE ADMINISTRADOR" */
+  #titulaformularios {
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  

@@ -1,0 +1,42 @@
+//FORMULARIO PARA AÑADIR OBRAS
+
+document.getElementById('agregar_obra').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    img_url = document.getElementById('imagen').files[0];
+
+    var formData = new FormData();
+    formData.append('codigo', document.getElementById('codigo').value);
+    formData.append('nombre',document.getElementById('nombre').value);
+    formData.append('autor',document.getElementById('autor').value);
+    formData.append('imagen',img_url);
+
+    //console.log(img_url)
+    
+    fetch(URL + 'productos', {
+        method: 'POST', 
+        body: formData 
+    })
+
+    .then(function (response) {
+        if (response.ok) {
+            return response.json();
+            } 
+        else {
+            throw new Error('Error al agregar.');
+            }
+        })
+
+    .then(function () {
+        alert('Agregado correctamente.');
+        document.getElementById('codigo').value = "";
+        document.getElementById('nombre').value = "";
+        document.getElementById('autor').value = "";
+        document.getElementById('imagen').value = "";
+        })
+
+    .catch(function (error) {
+        alert('Error al agregar.');
+        console.error('Error:', error);
+        })
+    })

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/icon.ico" type="image/x-icon">
+    <title>CreArt</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- BOXINCONS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- GOOGLE FONT OSWALD -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&display=swap" rel="stylesheet">
+     <!--Iconos-->
+     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- <header>
+        <nav>
+            <div class="menu" width="100%" style="position: fixed;">
+                <div style="display: flex;justify-content: center;text-align: center;grid-area: logo;min-width: 30px;">
+                    <img width="100%" height="100%" src="img/icon.png" alt="Icono">
+                </div>
+                <div style="grid-area: search;">
+                    <input type="text" onkeydown="tocarTecla()" placeholder="Buscar Artistas / Obras / Temas" style="height: 35px; width: 90%;font-size: 105%;border-top: 0px;border-left: 0px;border-right: 0px;" name="" id="buscador">
+                    <img onclick="buscar()" class="lupa" width="3%" src="img/lupa.png" alt="Lupa" style="position: relative;left: -5%;">
+                </div>
+                <div style="grid-area: login; display: flex; justify-content: space-between;">
+                    <a class="link" href="index.html">Inicio</a>
+                    <a class="login">Login</a>
+                    <a class="registrar" href="formulario.html">Registrarse</a>
+                </div>
+            </div>
+        </nav>
+    </header> -->
+
+    <header>
+        <div class="contenedor-menu">
+            <nav class="nav-main">
+                <div class="menu">
+                    <div class="img">
+                        <a href="index.html">
+                            <img width="70%" height="70%" src="img/icon.png" alt="Icono">
+                        </a>
+                    </div>
+                    <div style="grid-area: search;">
+                        <input type="text" onkeydown="tocarTecla()" placeholder="Buscar Artistas / Obras / Temas" style="height: 30px; width: 90%;font-size: 105%;border-top: 0px;border-left: 0px;border-right: 0px;" name="" id="buscador">
+                        <img onclick="buscar()" class="lupa"  src="img/lupa.png" alt="Lupa">
+                    </div>
+                    <div style="grid-area: login; display: flex; justify-content: space-between;">
+                        <a href="formulario.html" class="login">Login</a>
+                        <a href="formulario.html" class="registrar">Registrarse</a>
+                    </div>
+                </div>
+                <div class="subcontenedor-menu">
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="#">Compra</a></li>
+                        <li><a href="indexpublicar.html">Publicar</a></li>
+                        <li><a href="indexadministrar.html">Administrar</a></li>
+                        <li><a href="API.html">¡Descubre!</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="espacio-header"> </div>
+
+    <!--<br><br><br><br>-->
+
+    <!-- RESULTADOS DE BUSQUEDA -->
+    <h2 id="resultados-head" style="display: none;color: gray;margin: auto;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Resultados:</h2>
+    <ul id="resultados" style="list-style: none;"></ul>
+
+    <!--FORMULARIO PARA AÑADIR OBRAS-->
+    <!--Para el funcionamiento necesita script.js-->
+
+    <h2 style="text-align: center;">Publicar Obras</h2>
+
+    <form id="agregar_obra" enctype="multipart/form-data">
+        <label for="codigo">Codigo:</label>
+        <input type="number" id="codigo" name="codigo" required><br>
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br>
+
+        <label for="autor">Autor:</label>
+        <input type="text" id="autor" name="autor" required><br>
+
+        <label for="imagen">Imagen:</label>
+        <input type="file" id="imagen" name="imagen" required><br>
+
+        <button type="submit">Agregar</button>
+    </form>
+    <br>
+
+    <!--<div class="section-venta">
+            <h2>Obras en Venta</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="img/6.jpg" alt="Obra 6">
+                    <h3>Suave mar</h3>
+                    <p>Pasteles. 50 x 50 cms </p>
+                </div>
+                <div class="card">
+                    <img src="img/7.jpg" alt="Obra 7">
+                    <h3>Fruit</h3>
+                    <p>Carboncillo. 50 x 50 cms</p>
+                </div>
+                <div class="card">
+                    <img src="img/8.jpg" alt="Obra 8">
+                    <h3>Rojo</h3>
+                    <p>Óleo y mixtas. 50 x 50 cms</p>
+                </div>
+                <div class="card">
+                    <img src="img/9.jpg" alt="Obra 9">
+                    <h3>Repisas</h3>
+                    <p>Grafito. 50 x 50 cms</p>
+                </div>
+                <div class="card">
+                    <img src="img/10.jpg" alt="Obra 10">
+                    <h3>Beyond</h3>
+                    <p>Acrílicos y misxtas.50 x 50 cms</p>
+                </div>
+                
+            </div>
+        </div>
+    </div>-->
+
+    <footer class="pie-pagina">
+        <div class="grupo-1">
+            <div class="loguito">
+                <figure>
+                    <a href="/index.html">
+                        <img src="img/icon.png" alt="Nuestro logo">
+                    </a>
+                </figure>
+            </div>
+            <div class="box">
+                <h2>SOBRE NOSOTROS</h2>
+                <p>Lorem ipsum dolor sit amet.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit, ipsa</p>
+            </div>
+            <div class="box">
+                <h2>SEGUINOS</h2>
+                <div class="red-social">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                </div>
+            </div>
+        </div>
+        <div class="grupo-2">
+        </div>
+            <small>&copy; 2023 <b>Diseños & Arte</b> - Todos los Derechos Reservados.</small>
+    </footer>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="script.js"></script>
+    <script src="scr_agregar"></script>
+</body>
+</html>

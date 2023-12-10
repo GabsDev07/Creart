@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/icon.ico" type="image/x-icon">
+    <title>CreArt</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- BOXINCONS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- GOOGLE FONT OSWALD -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&display=swap" rel="stylesheet">
+     <!--Iconos-->
+     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+    <header>
+        <div class="contenedor-menu">
+            <nav class="nav-main">
+                <div class="menu">
+                    <div class="img">
+                        <a href="index.html">
+                            <img width="70%" height="70%" src="img/icon.png" alt="Icono">
+                        </a>
+                    </div>
+                    <div style="grid-area: search;">
+                        <input type="text" onkeydown="tocarTecla()" placeholder="Buscar Artistas / Obras / Temas" style="height: 30px; width: 90%;font-size: 105%;border-top: 0px;border-left: 0px;border-right: 0px;" name="" id="buscador">
+                        <img onclick="buscar()" class="lupa"  src="img/lupa.png" alt="Lupa">
+                    </div>
+                    <div style="grid-area: login; display: flex; justify-content: space-between;">
+                        <a href="formulario.html" class="login">Login</a>
+                        <a href="formulario.html" class="registrar">Registrarse</a>
+                    </div>
+                </div>
+                <div class="subcontenedor-menu">
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="#">Compra</a></li>
+                        <li><a href="indexpublicar.html">Publicar</a></li>
+                        <li><a href="indexadministrar.html">Administrar</a></li>
+                        <li><a href="API.html">¡Descubre!</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="espacio-header"> </div>
+
+    <!--<br><br><br><br>-->
+
+    <!-- RESULTADOS DE BUSQUEDA -->
+    <h2 id="resultados-head" style="display: none;color: gray;margin: auto;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Resultados:</h2>
+    <ul id="resultados" style="list-style: none;"></ul>
+
+    <main>
+        <div class="conteiner-carrousel">
+            <div class="carrouseles" id="slider">
+                <section class="slider-section">
+                    <img src="img/img 1.jpg" alt="imagen 1">
+                    <div class="texto">
+                        <h2>Img 1</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam fugit magnam, consequuntur
+                            mollitia minus cum molestias nemo impedit, possimus quisquam, repellat sunt facilis? Numquam
+                            dolore autem magnam soluta, non vitae.</p>
+                    </div>
+                </section>
+                <section class="slider-section">
+                    <img src="img/img 2.jpg" alt="imagen 2">
+                    <div class="texto">
+                        <h2>Img 2</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam fugit magnam, consequuntur
+                            mollitia minus cum molestias nemo impedit, possimus quisquam, repellat sunt facilis? Numquam
+                            dolore autem magnam soluta, non vitae.</p>
+                    </div>
+                </section>
+                <section class="slider-section">
+                    <img src="img/img 3.jpg" alt="imagen 3">
+                    <div class="texto">
+                        <h2>Img 3</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam fugit magnam, consequuntur
+                            mollitia minus cum molestias nemo impedit, possimus quisquam, repellat sunt facilis? Numquam
+                            dolore autem magnam soluta, non vitae.</p>
+                    </div>
+                </section>
+                <section class="slider-section">
+                    <img src="img/img 4.jpg" alt="imagen 4">
+                    <div class="texto">
+                        <h2>Img 4</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam fugit magnam, consequuntur
+                            mollitia minus cum molestias nemo impedit, possimus quisquam, repellat sunt facilis? Numquam
+                            dolore autem magnam soluta, non vitae.</p>
+                    </div>
+                </section>
+                <section class="slider-section">
+                    <img src="img/img 5.jpg" alt="imagen 5">
+                    <div class="texto">
+                        <h2>Img 5</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam fugit magnam, consequuntur
+                            mollitia minus cum molestias nemo impedit, possimus quisquam, repellat sunt facilis? Numquam
+                            dolore autem magnam soluta, non vitae.</p>
+                    </div>
+                </section>
+                <section class="slider-section">
+                    <img src="img/img 6.jpg" alt="imagen 6">
+                    <div class="texto">
+                        <h2>Img 6</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam fugit magnam, consequuntur
+                            mollitia minus cum molestias nemo impedit, possimus quisquam, repellat sunt facilis? Numquam
+                            dolore autem magnam soluta, non vitae.</p>
+                    </div>
+                </section>
+                <section class="slider-section">
+                    <img src="img/img 7.jpg" alt="imagen 7">
+                    <div class="texto">
+                        <h2>Img 7</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam fugit magnam, consequuntur
+                            mollitia minus cum molestias nemo impedit, possimus quisquam, repellat sunt facilis? Numquam
+                            dolore autem magnam soluta, non vitae.</p>
+                    </div>
+                </section>
+            </div>
+            <div class="btn-left"><i class='bx bx-chevron-left'></i></div>
+            <div class="btn-right"><i class='bx bx-chevron-right'></i></div>
+        </div>
+    </main>
+
+    <div>
+        <!-- grilla de productos -->
+        <div class="container">
+            <div class="section">
+                <h2>Obras Recomendadas</h2>
+                <div class="grid">
+                    <!-- Tarjetas de Obras Recomendadas -->
+                    <div class="card">
+                        <ul class="obra_random"></ul>
+                    </div>
+                    <div class="card">
+                        <ul class="obra_random"></ul>
+                    </div>
+                    <div class="card">
+                        <ul class="obra_random"></ul>
+                    </div>
+                    <div class="card">
+                        <ul class="obra_random"></ul>
+                    </div>
+                    <div class="card">
+                        <ul class="obra_random"></ul>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="section">
+                <h2>Obras en Venta</h2>
+                <div class="grid">
+                    <!-- Tarjetas de Obras en Venta -->
+                    <div class="card">
+                        <ul class="obra_random"></ul>
+                        <!--<img src="img/6.jpg" alt="Obra 6" class="obra_random">-->
+                    </div>
+                    <div class="card">
+                        <ul class="obra_random"></ul>
+                    </div>
+                    <div class="card">
+                        <ul class="obra_random"></ul>
+                    </div>
+                    <div class="card">
+                        <ul class="obra_random"></ul>
+                    </div>
+                    <div class="card">
+                        <ul class="obra_random"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FORMULARIO PARA MODIFICAR OBRAS -->
+
+    <!--<form id="modificar_obra" enctype="multipart/form-data">
+        <label for="codigo_modificar">Codigo:</label>
+        <input type="number" id="codigo_modificar" name="codigo" required><br>
+    
+        <label for="nombre_modificar">Nombre:</label>
+        <input type="text" id="nombre_modificar" name="nombre" required><br>
+    
+        <label for="autor_modificar">Autor:</label>
+        <input type="text" id="autor_modificar" name="autor" required><br>
+    
+        <label for="nueva_imagen">Imagen:</label>
+        <input type="file" id="imagen_modificar" name="imagen"><br>
+    
+        <label for="cambiar_imagen">Cambiar Imagen:</label>
+        <input type="checkbox" id="cambiar_imagen" name="cambiar_imagen" value="true">
+    
+        <button type="submit">Modificar</button>
+    </form>
+    <br>-->
+
+    <!-- I FRAME -->
+    <div class="frame">
+        <h2>Historia del Arte</h2>
+        <iframe src="https://www.youtube.com/watch?v=lc71VyzJVAY" width="560" height="315" frameborder="0"></iframe>
+    </div>
+    
+<!--height="45px" width="45px"-->
+    <!--::::Pie de Pagina::::::-->
+    <footer class="pie-pagina">
+        <div class="grupo-1">
+            <div class="loguito">
+                <figure>
+                    <a href="/index.html">
+                        <img src="img/icon.png" alt="Nuestro logo">
+                    </a>
+                </figure>
+            </div>
+            <div class="box">
+                <h2>SOBRE NOSOTROS</h2>
+                <p>Lorem ipsum dolor sit amet.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit, ipsa</p>
+            </div>
+            <div class="box">
+                <h2>SEGUINOS</h2>
+                <div class="red-social">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                </div>
+            </div>
+        </div>
+        <div class="grupo-2">
+        </div>
+            <small>&copy; 2023 <b>Diseños & Arte</b> - Todos los Derechos Reservados.</small>
+    </footer>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
